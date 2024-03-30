@@ -11,7 +11,7 @@ import {
 } from "@mantine/core";
 import { IconArrowsSort } from "@tabler/icons-react";
 import { useState, useEffect } from "react";
-import { Order } from "../interfaces/order";
+import { Order } from "@/interfaces/order";
 
 export function DataTable({
   data = [],

@@ -2,7 +2,7 @@
 import { Table, NativeSelect, Pagination, Button, Group, Avatar, Badge, Text, TextInput } from "@mantine/core";
 import {IconArrowsSort} from "@tabler/icons-react";
 import { useState, useEffect } from "react";
-import { Order } from "../interfaces/order";
+import { Order } from "@/interfaces/order";
 
 export function DataTableMini({ data = [], action = () => {alert("action")}, actionText="Save" }: { data: Order[], action?: () => void, actionText?: string }): JSX.Element {
   const [itemsPerPage, setItemsPerPage] = useState<number>(5);

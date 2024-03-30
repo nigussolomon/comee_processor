@@ -1,7 +1,7 @@
 "use client";
-import { DataTable } from "../../../components/table";
-import { DataTableMini } from "../../../components/tableMini";
-import { OrderData } from "../../../data/tableData";
+import { DataTable } from "@/components/table";
+import { DataTableMini } from "@/components/tableMini";
+import { OrderData } from "@/data/tableData";
 import {
   Drawer,
   TextInput,

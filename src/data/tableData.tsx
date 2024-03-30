@@ -1,4 +1,4 @@
-import { Order } from "../interfaces/order";
+import { Order } from "@/interfaces/order";
 export const OrderData: Order[] = [
   {
     avatar:
