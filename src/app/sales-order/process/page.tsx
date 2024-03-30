@@ -1,6 +1,6 @@
 "use client";
-import { DataTable } from "@components/table";
-import { OrderData } from "@data/tableData";
+import { DataTable } from "@/components/table";
+import { OrderData } from "@/data/tableData";
 import {
   Drawer,
   TextInput,
