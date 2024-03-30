@@ -28,6 +28,7 @@ interface LinksGroupProps {
   label: string;
   initiallyOpened?: boolean;
   links?: { label: string; link: string }[];
+  link: string;
 }
 
 export function LinksGroup({

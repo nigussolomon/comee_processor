@@ -4,7 +4,7 @@ import {IconArrowsSort} from "@tabler/icons-react";
 import { useState, useEffect } from "react";
 import { Order } from "../interfaces/order";
 
-export function DataTableMini({ data = [], action = () => {alert("action")}, actionText="Save" }: { data: Order[] }): JSX.Element {
+export function DataTableMini({ data = [], action = () => {alert("action")}, actionText="Save" }: { data: Order[], action?: () => void, actionText?: string }): JSX.Element {
   const [itemsPerPage, setItemsPerPage] = useState<number>(5);
   const [activePage, setActivePage] = useState<number>(1);
   const totalPages: number = Math.ceil(data.length / itemsPerPage);

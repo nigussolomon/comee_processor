@@ -74,7 +74,7 @@ export function NavDrawer({ children }: { children: React.ReactNode }) {
                 alignItems: "end",
               }}
             >
-              <Text color="#05184C">Hi, I'm Maveko</Text>
+              <Text color="#05184C">Juilius Ceasar</Text>
               <Text size="xs" color="dimmed">
                 Order Manager
               </Text>

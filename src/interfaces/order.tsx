@@ -6,4 +6,5 @@ export interface Order {
   ref_no: string;
   type: string;
   active: boolean;
+  qty: number;
 }

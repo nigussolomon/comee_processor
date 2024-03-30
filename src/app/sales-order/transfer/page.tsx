@@ -68,7 +68,6 @@ export default function Transfer() {
         <Group>
           <DataTableMini
             data={OrderData}
-            action={open}
             actionText="ADD"
           ></DataTableMini>
         </Group>
@@ -83,7 +82,9 @@ export default function Transfer() {
       <Divider my="sm"></Divider>
       <DataTable
         data={OrderData}
-        action={open}
+        action={() => {
+          open();
+        }}
         actionText="Transfer Request"
       ></DataTable>
     </>

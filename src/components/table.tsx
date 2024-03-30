@@ -1,10 +1,31 @@
 "use client";
-import { Table, NativeSelect, Pagination, Button, Group, Avatar, Badge, Text } from "@mantine/core";
-import {IconArrowsSort} from "@tabler/icons-react";
+import {
+  Table,
+  NativeSelect,
+  Pagination,
+  Button,
+  Group,
+  Avatar,
+  Badge,
+  Text,
+} from "@mantine/core";
+import { IconArrowsSort } from "@tabler/icons-react";
 import { useState, useEffect } from "react";
 import { Order } from "../interfaces/order";
 
-export function DataTable({ data = [], action = () => {alert("action")}, actionText="Action", noAction }: { data: Order[] }): JSX.Element {
+export function DataTable({
+  data = [],
+  action = () => {
+    alert("action");
+  },
+  actionText = "Action",
+  noAction,
+}: {
+  data: Order[];
+  action?: () => void;
+  actionText?: string;
+  noAction?: boolean;
+}): JSX.Element {
   const [itemsPerPage, setItemsPerPage] = useState<number>(5);
   const [activePage, setActivePage] = useState<number>(1);
   const totalPages: number = Math.ceil(data.length / itemsPerPage);
@@ -56,19 +77,18 @@ export function DataTable({ data = [], action = () => {alert("action")}, actionT
           </Badge>
         )}
       </Table.Td>
-      {
-        !noAction ?
+      {!noAction ? (
         <Table.Td>
-        <Button
-          onClick={action}
-          disabled={item.active}
-          variant="light"
-          leftSection={<IconArrowsSort size={14} />}
-        >
-          {actionText}
-        </Button>
-      </Table.Td>: null
-      }
+          <Button
+            onClick={action}
+            disabled={item.active}
+            variant="light"
+            leftSection={<IconArrowsSort size={14} />}
+          >
+            {actionText}
+          </Button>
+        </Table.Td>
+      ) : null}
     </Table.Tr>
   ));
 
@@ -93,9 +113,9 @@ export function DataTable({ data = [], action = () => {alert("action")}, actionT
               <Table.Th>REF No</Table.Th>
               <Table.Th>Type</Table.Th>
               <Table.Th>Status</Table.Th>
-              {
-                !noAction ? <Table.Th style={{ width: 250 }}>Action</Table.Th> : null
-              }
+              {!noAction ? (
+                <Table.Th style={{ width: 250 }}>Action</Table.Th>
+              ) : null}
             </Table.Tr>
           </Table.Thead>
           <Table.Tbody>{rows}</Table.Tbody>

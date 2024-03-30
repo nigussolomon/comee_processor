@@ -142,7 +142,7 @@ export default function Process() {
       </Drawer>
       <Text size="lg" style={{ fontSize: "24px" }} fw={900} >Process Order</Text>
       <Divider my="sm"></Divider>
-      <DataTable data={OrderData} action={open} actionText="Notify"></DataTable>
+      <DataTable data={OrderData} action={()=> {open()}} actionText="Notify"></DataTable>
     </>
   );
 }
