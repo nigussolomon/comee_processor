@@ -45,7 +45,7 @@ export function LinksGroup({
   const items = (hasLinks ? links : []).map((link) => (
     <Text
       style={{
-        backgroundColor: pathname === link.link ? "#3b82f625" : "",
+        color: pathname === link.link ? "#05184C" : "",
       }}
       className={classes.link}
       key={link.label}
@@ -62,14 +62,14 @@ export function LinksGroup({
     <>
       <UnstyledButton
         style={{
-          backgroundColor: pathname === link ? "#3b82f625" : "transparent",
+          backgroundColor: pathname === link || pathname.includes("sales-order") && link.includes("sales-order") ? "#05184C25" : "transparent",
         }}
         onClick={() => {setOpened((o) => !o), !hasLinks && router.push(link)}}
         className={classes.control}
       >
         <Group justify="space-between" gap={0}>
           <Box style={{ display: "flex", alignItems: "center" }}>
-            <ThemeIcon variant="light" color="#3b82f6" size={30}>
+            <ThemeIcon variant={pathname === link || pathname.includes("sales-order") && link.includes("sales-order") ? "white" : "filled"} color="#05184C" size={30}>
               <Icon style={{ width: rem(18), height: rem(18) }} />
             </ThemeIcon>
             <Box ml="md">{label}</Box>

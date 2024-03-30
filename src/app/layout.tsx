@@ -3,7 +3,8 @@ import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
-import { Drawer } from "@/shared/Drawer";
+import { NavDrawer } from "@/shared/Drawer";
+import { useDisclosure } from "@mantine/hooks";
 import { useRouter, usePathname } from "next/navigation";
 
 
@@ -26,12 +27,12 @@ export default function RootLayout({
           {pathname.startsWith("/auth/") ? (
             <>{children}</>
           ) : (
-            <Drawer>
+            <NavDrawer>
               <>
                 <Notifications />
                 {children}
               </>
-            </Drawer>
+            </NavDrawer>
           )}
         </MantineProvider>
       </body>
